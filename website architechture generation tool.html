@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Decor Inspiration</title>
+    <style>
+        :root {
+            --primary-color: #6d28d9;
+            --primary-light: #7c3aed;
+            --secondary-color: #1e293b;
+            --accent-color: #ec4899;
+            --text-color: #334155;
+            --background-light: #f8fafc;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            --transition-speed: 0.3s;
+            --success-color: #22c55e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-light);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        nav {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all var(--transition-speed);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: all var(--transition-speed);
+            transform: translateX(-50%);
+        }
+
+
+        nav a:hover::after {
+            width: 80%;
+        }
+        
+        nav a:hover {
+            color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .preference-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 3rem;
+            transition: transform var(--transition-speed);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .preference-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+        .preference-form:hover {
+            transform: translateY(-5px);
+        }
+
+        .filter-options {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-button {
+            background-color: white;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .filter-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background-color: var(--primary-color);
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            transition: width 0.6s, height 0.6s;
+            z-index: -1;
+        }
+        
+        .filter-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        .filter-button:hover, .filter-button.active {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        select, input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e1e1e1;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            transition: all var(--transition-speed);
+            font-size: 1rem;
+            background-color: white;
+        }
+
+        select:focus, input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all var(--transition-speed);
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .inspiration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .inspiration-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all var(--transition-speed);
+            position: relative;
+        }
+        .inspiration-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, 
+                rgba(109, 40, 217, 0.2),
+                rgba(236, 72, 153, 0.2));
+            opacity: 0;
+            transition: opacity var(--transition-speed);
+            z-index: 1;
+        }
+        
+        .inspiration-card:hover::before {
+            opacity: 1;
+        }
+
+        .inspiration-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .inspiration-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform var(--transition-speed);
+        }
+
+        .inspiration-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 2rem;
+        }
+
+        .card-content h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .card-tags {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+
+        .tag {
+            background-color: var(--background-light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            transition: all var(--transition-speed);
+            border: 1px solid transparent;
+        }
+
+        .tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            border-color: var(--primary-light);
+        }
+
+        .trends-section {
+            margin-top: 4rem;
+        }
+
+        .trend-article {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            box-shadow: var(--card-shadow);
+            transition: all var(--transition-speed);
+            cursor: pointer;
+        }
+
+        .trend-article:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .trend-article h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: all var(--transition-speed);
+            box-shadow: var(--card-shadow);
+            font-size: 1.5rem;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+            background-color: var(--secondary-color);
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .main-content {
+                padding: 0 1rem;
+            }
+
+            .inspiration-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-options {
+                flex-direction: column;
+            }
+
+            .trend-article h3 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        .results-section {
+            display: none;
+            margin-top: 2rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .results-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-color);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary-color);
+            border-right: 4px solid var(--accent-color);
+            border-bottom: 4px solid var(--primary-light);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes successPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .success-message {
+            color: var(--success-color);
+            text-align: center;
+            padding: 1rem;
+            animation: successPulse 1s ease-in-out;
+        }
+        .photo-credit {
+            margin-top: 1rem;
+            font-size : 0.8rem;
+            color : #666;
+        }
+
+        .photo-credit a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .photo-credit a:hover {
+            text-decoration: underline;
+        }
+
+        .inspiration-card {
+            position: relative;
+        }
+
+        .inspiration-card img {
+            transition: transform 0.3s ease;
+        }
+
+        .inspiration-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .load-more {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .load-more-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .load-more-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .photo-credit {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .photo-credit a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .photo-credit a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .preference-form {
+                padding: 2rem 1rem;
+            }
+
+            .filter-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Room Decor Inspiration</h1>
+            <p>Discover your perfect interior design style</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#inspiration">Inspiration</a></li>
+            <li><a href="#trends">Design Trends</a></li>
+            <li><a href="#designers">Find Designers</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <section class="preference-form" id="home">
+            <h2>Tell us your preferences</h2>
+            <div class="filter-options">
+                <button class="filter-button active">All Styles</button>
+                <button class="filter-button">Modern</button>
+                <button class="filter-button">Rustic</button>
+                <button class="filter-button">Minimalist</button>
+                <button class="filter-button">Industrial</button>
+            </div>
+            <form id="styleForm">
+                <div class="form-group">
+                    <label for="style">Preferred Style:</label>
+                    <select id="style" required>
+                        <option value="">Select a style</option>
+                        <option value="modern">Modern</option>
+                        <option value="rustic">Rustic</option>
+                        <option value="minimalist">Minimalist</option>
+                        <option value="industrial">Industrial</option>
+                        <option value="scandinavian">Scandinavian</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="colors">Color Scheme:</label>
+                    <select id="colors" required>
+                        <option value="">Select a color scheme</option>
+                        <option value="neutral">Neutral & Earth Tones</option>
+                        <option value="bold">Bold & Vibrant</option>
+                        <option value="pastel">Soft Pastels</option>
+                        <option value="monochrome">Monochromatic</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="furniture">Furniture Preferences:</label>
+                    <select id="furniture" required>
+                        <option value="">Select furniture style</option>
+                        <option value="wood">Natural Wood</option>
+                        <option value="metal">Metal & Industrial</option>
+                        <option value="upholstered">Upholstered & Soft</option>
+                        <option value="mixed">Mixed Materials</option>
+                    </select>
+                </div>
+
+                <button type="submit">Get Inspiration</button>
+            </form>
+        </section>
+
+        <section class="inspiration-grid" id="inspiration">
+            <div class="inspiration-card">
+                <img src="/api/placeholder/400/300" alt="Modern living room">
+                <div class="card-content">
+                    <h3>Modern Minimalist Living Room</h3>
+                    <p>Clean lines and neutral tones create a peaceful atmosphere.</p>
+                    <div class="card-tags">
+                        <span class="tag">Modern</span>
+                        <span class="tag">Minimalist</span>
+                        <span class="tag">Neutral</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="inspiration-card">
+                <img src="/api/placeholder/400/300" alt="Rustic bedroom">
+                <div class="card-content">
+                    <h3>Rustic Cozy Bedroom</h3>
+                    <p>Natural materials and warm textures for ultimate comfort.</p>
+                    <div class="card-tags">
+                        <span class="tag">Rustic</span>
+                        <span class="tag">Cozy</span>
+                        <span class="tag">Wood</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="inspiration-card">
+                <img src="/api/placeholder/400/300" alt="Industrial kitchen">
+                <div class="card-content">
+                    <h3>Industrial Style Kitchen</h3>
+                    <p>Raw materials meet modern functionality.</p>
+                    <div class="card-tags">
+                        <span class="tag">Industrial</span>
+                        <span class="tag">Modern</span>
+                        <span class="tag">Metal</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="results-section" id="results">
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                <p>Finding perfect matches for you...</p>
+            </div>
+            <div class="inspiration-grid" id="resultsGrid"></div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 Room Decor Inspiration. All rights reserved.</p>
+        <p>Connect with professional interior designers to bring your vision to life.</p>
+    </footer>
+
+    <div class="scroll-to-top">↑</div>
+
+    <script>
+    const roomDesigns = {
+            modern: {
+                neutral: {
+                    wood: [
+                        {
+                            title: "Modern Wooden Haven",
+                            description: "Clean lines meet natural wood elements in this sophisticated space.",
+                            image: "/api/placeholder/400/300",
+                            tags: ["Modern", "Natural", "Minimalist"]
+                        },
+                        {
+                            title: "Scandinavian Inspired Living",
+                            description: "Light wood tones with neutral fabric create a peaceful atmosphere.",
+                            image: "/api/placeholder/400/300",
+                            tags: ["Modern", "Scandinavian", "Cozy"]
+                        }
+                    ],
+                    metal: [
+                        {
+                            title: "Urban Loft Style",
+                            description: "Metal accents with warm neutrals for a balanced modern look.",
+                            image: "/api/placeholder/400/300",
+                            tags: ["Modern", "Urban", "Metal"]
+                        }
+                    ],
+                    upholstered: [
+                        {
+                            title: "Soft Contemporary",
+                            description: "Plush fabrics in neutral tones create an inviting modern space.",
+                            image: "/api/placeholder/400/300",
+                            tags: ["Modern", "Comfortable", "Elegant"]
+                        }
+                    ]
+                },
+                bold: {
+                    wood: [
+                        {
+                            title: "Color Pop Modern",
+                            description: "Bold accent colors against wooden furniture create dynamic energy.",
+                            image: "/api/placeholder/400/300",
+                            tags: ["Modern", "Colorful", "Wood"]
+                        }
+                    ],
+                    metal: [
+                        {
+                            title: "Industrial Color Fusion",
+                            description: "Vibrant colors complement industrial metal elements.",
+                            image: "/api/placeholder/400/300",
+                            tags: ["Modern", "Industrial", "Bold"]
+                        }
+                    ]
+                }
+            },
+            rustic: {
+                neutral: {
+                    wood: [
+                        {
+                            title: "Farmhouse Comfort",
+                            description: "Natural wood with rustic elements create a cozy farmhouse feel.",
+                            image: "/api/placeholder/400/300",
+                            tags: ["Rustic", "Farmhouse", "Cozy"]
+                        },
+                        {
+                            title: "Mountain Retreat",
+                            description: "Rugged wood elements with soft neutral textiles.",
+                            image: "/api/placeholder/400/300",
+                            tags: ["Rustic", "Natural", "Warm"]
+                        }
+                    ]
+                }
+            },
+            minimalist: {
+                monochrome: {
+                    mixed: [
+                        {
+                            title: "Pure Minimalism",
+                            description: "Clean lines and monochromatic palette for ultimate simplicity.",
+                            image: "/api/placeholder/400/300",
+                            tags: ["Minimalist", "Monochrome", "Clean"]
+                        }
+                    ]
+                }
+            }
+        };
+
+        
+        // New function to fetch inspiration from Pexels
+        async function fetchExternalInspiration(style, colors) {
+            try {
+                const searchQuery = `${style} ${colors} interior design room`;
+                const response = await fetch(
+                    `https://api.pexels.com/v1/search?query=${encodeURIComponent(searchQuery)}&per_page=9`,
+                    {
+                        headers: {
+                            'Authorization': 'e5ZyWwTYedsKH9KdyuwyUguX70I8BDjMMFpcmhTu44GQ6SJMBZMxf5Ry'
+                        }
+                    }
+                );
+                
+                const data = await response.json();
+                
+                return data.photos.map(photo => ({
+                    title: `${style} ${colors} Interior`,
+                    description: `Beautiful ${style} room design with ${colors} color scheme`,
+                    image: photo.src.large,
+                    tags: [style, colors, "Inspiration"],
+                    credit: {
+                        name: photo.photographer,
+                        link: photo.photographer_url,
+                        platform: "Pexels"
+                    }
+                }));
+            } catch (error) {
+                console.error('Error fetching external inspiration:', error);
+                return [];
+            }
+        }
+
+        // Enhanced function to create room card HTML
+        function createRoomCard(room) {
+            return `
+                <div class="inspiration-card">
+                    <img src="${room.image}" alt="${room.title}" loading="lazy">
+                    <div class="card-content">
+                        <h3>${room.title}</h3>
+                        <p>${room.description}</p>
+                        <div class="card-tags">
+                            ${room.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
+                        ${room.credit ? `
+                        <div class="photo-credit">
+                            Photo by <a href="${room.credit.link}" target="_blank" rel="noopener">${room.credit.name}</a> 
+                            on ${room.credit.platform}
+                        </div>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Enhanced function to find matching designs
+        async function findMatchingDesigns(style, colors, furniture) {
+            const resultsSection = document.querySelector('.results-section');
+            const loadingDiv = resultsSection.querySelector('.loading');
+            const resultsGrid = document.getElementById('resultsGrid');
+            
+            resultsSection.classList.add('active');
+            loadingDiv.style.display = 'block';
+            resultsGrid.innerHTML = '';
+
+            try {
+                // Get pre-defined matches
+                const localMatches = roomDesigns[style]?.[colors]?.[furniture] || [];
+                
+                // Fetch external inspiration
+                const externalMatches = await fetchExternalInspiration(style, colors);
+                
+                // Combine results
+                const allMatches = [...localMatches, ...externalMatches];
+
+                loadingDiv.style.display = 'none';
+
+                if (allMatches.length > 0) {
+                    resultsGrid.innerHTML = allMatches.map(createRoomCard).join('');
+
+                    // Add load more button if external results exist
+                    if (externalMatches.length > 0) {
+                        resultsGrid.insertAdjacentHTML('afterend', `
+                            <div class="load-more">
+                                <button class="load-more-btn">Load More Inspiration</button>
+                            </div>
+                        `);
+                    }
+                } else {
+                    resultsGrid.innerHTML = `
+                        <div class="no-results">
+                            <h3>No exact matches found</h3>
+                            <p>Try adjusting your preferences or check out our trending designs below.</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                loadingDiv.style.display = 'none';
+                resultsGrid.innerHTML = `
+                    <div class="no-results">
+                        <h3>Oops! Something went wrong</h3>
+                        <p>Please try different combinations or check back later.</p>
+                    </div>
+                `;
+            }
+        }
+
+
+
+        
+        // Enhanced scroll to top functionality
+        const scrollButton = document.querySelector('.scroll-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollButton.classList.add('visible');
+            } else {
+                scrollButton.classList.remove('visible');
+            }
+        });
+
+        scrollButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Enhanced filter buttons interaction
+        const filterButtons = document.querySelectorAll('.filter-button');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Add subtle animation to cards
+                const cards = document.querySelectorAll('.inspiration-card');
+                cards.forEach(card => {
+                    card.style.opacity = '0.7';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                    }, 300);
+                });
+            });
+        });
+
+
+                // Add smooth scroll for all anchor links
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add form submission feedback
+        const form = document.getElementById('styleForm');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Show loading state
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Finding inspiration...';
+            submitButton.disabled = true;
+            
+            const style = document.getElementById('style').value;
+            const colors = document.getElementById('colors').value;
+            const furniture = document.getElementById('furniture').value;
+
+            try {
+                await findMatchingDesigns(style, colors, furniture);
+                
+                // Show success message
+                const successMessage = document.createElement('div');
+                successMessage.className = 'success-message';
+                successMessage.textContent = '✨ Found perfect matches for your style!';
+                form.appendChild(successMessage);
+                
+                // Remove success message after 3 seconds
+                setTimeout(() => {
+                    successMessage.remove();
+                }, 3000);
+                
+                // Scroll to results
+                document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+            } catch (error) {
+                console.error('Error:', error);
+            } finally {
+                // Restore button state
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }
+        });
+
+        // Add hover effect for inspiration cards
+        document.querySelectorAll('.inspiration-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
