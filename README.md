@@ -1,5 +1,6 @@
 # Interior-Room-Designer
 interior room designer to select some designings and patterns for rooms 
+This is a web application called "Room Decor Inspiration" that helps users discover interior design styles based on their preferences. The tool allows users to: Select their preferred design style. Choose a color scheme . Select furniture preferences. Get personalized room decor inspiration based on their selections
 
 📖 About the Project
 ✨ Room Decor Inspiration is an interactive web-based application designed to help users discover and explore stunning interior design ideas based on their personal preferences.
